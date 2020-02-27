@@ -1,0 +1,28 @@
+[package]
+name = "rustls_example"
+version = "0.1.0"
+authors = ["PGP <pgp@gmx.it>"]
+edition = "2018"
+
+#[dependencies]
+#rustls = "0.15.1"
+#tokio = "0.1.15"
+#tokio-stdin-stdout = "0.1.5"
+#tokio-rustls = "0.9.0"
+#clap = "2.32.0"
+#webpki = "0.19.1"
+#webpki-roots = "0.16.0"
+#reqwest = "0.9.10"
+#ring = "0.14.6"
+
+#[dependencies]
+#hyper = "0.12.24"
+#tokio-core = "0.1"
+#futures = "0.1"
+
+[dependencies]
+rustls = "0.15.1"
+hyper = "0.12.24"
+hyper-rustls = "0.16.0"
+tokio = "0.1.15"
+futures = "0.1"
