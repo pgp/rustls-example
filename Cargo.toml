@@ -1,12 +1,28 @@
 [package]
 name = "rustls_example"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["PGP <pgp@gmx.it>"]
 edition = "2018"
 
 [dependencies]
-rustls = "0.15.1"
-hyper = "0.12.24"
-hyper-rustls = "0.16.0"
-tokio = "0.1.15"
-futures = "0.1"
+bytes = "0.5"
+log = "0.4.4"
+ct-logs = { version = "^0.6", optional = true }
+futures-util = "0.3.1"
+hyper = { version = "0.13.2", default-features = false }
+rustls = "0.17"
+rustls-native-certs = { version = "0.3.0", optional = true }
+tokio = "0.2.4"
+tokio-rustls = "0.13.0"
+webpki = "0.21.0"
+webpki-roots = { version = "0.19", optional = true }
+hyper-rustls = "0.20.0"
+
+[dev-dependencies]
+tokio = { version = "0.2", features = ["io-std", "macros", "dns", "stream"] }
+
+[features]
+default = ["native-tokio"]
+webpki-tokio = ["tokio-runtime", "webpki-roots"]
+native-tokio = ["tokio-runtime", "rustls-native-certs"]
+tokio-runtime =  ["hyper/runtime", "ct-logs"]
